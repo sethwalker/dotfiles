@@ -1,35 +1,11 @@
-"if &term == "screen"
-"	set term=xterm-color
-"endif
+set runtimepath+=~/.vim_runtime
 
-set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
-filetype plugin indent on    " Enable filetype-specific plugins
+source ~/.vim_runtime/vimrcs/basic.vim
+source ~/.vim_runtime/vimrcs/filetypes.vim
+source ~/.vim_runtime/vimrcs/plugins_config.vim
+source ~/.vim_runtime/vimrcs/extended.vim
 
-set expandtab
-set tabstop=2
-set sw=2
-set showmatch
-set autoindent
-set history=1000
-au BufNewFile,BufRead  svn-commit.* setf svn
-
-
-let g:fuzzy_ignore = "vendor/*;public/*;"
-let g:fuzzy_ceiling = 100000
-let mapleader = ','
-map <leader>t :FuzzyFinderTextMate<CR>
-
-runtime macros/matchit.vim
-
-augroup mkd
-  autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-augroup END
-
-au BufRead,BufNewFile *.tpl set filetype=smarty 
-
-" No eols
-
-set exrc
-set secure
-set nohlsearch
+try
+source ~/.vim_runtime/my_configs.vim
+catch
+endtry

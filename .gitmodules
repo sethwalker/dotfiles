@@ -1,3 +1,6 @@
 [submodule ".vim_runtime"]
 	path = .vim_runtime
 	url = git://github.com/amix/vimrc.git
+[submodule ".zprezto"]
+	path = .zprezto
+	url = https://github.com/sorin-ionescu/prezto.git
